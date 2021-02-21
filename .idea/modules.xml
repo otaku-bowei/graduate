@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/gold/gold.iml" filepath="$PROJECT_DIR$/gold/gold.iml" />
+      <module fileurl="file://$PROJECT_DIR$/graduate.iml" filepath="$PROJECT_DIR$/graduate.iml" />
+      <module fileurl="file://$PROJECT_DIR$/landing/landing.iml" filepath="$PROJECT_DIR$/landing/landing.iml" />
+      <module fileurl="file://$PROJECT_DIR$/other/other.iml" filepath="$PROJECT_DIR$/other/other.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sensitive/sensitive.iml" filepath="$PROJECT_DIR$/sensitive/sensitive.iml" />
+      <module fileurl="file://$PROJECT_DIR$/wordcount/wordcount.iml" filepath="$PROJECT_DIR$/wordcount/wordcount.iml" />
+      <module fileurl="file://$PROJECT_DIR$/work/work.iml" filepath="$PROJECT_DIR$/work/work.iml" />
+    </modules>
+  </component>
+</project>

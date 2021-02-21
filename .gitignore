@@ -1,0 +1,5 @@
+# Project exclude paths
+/landing/target/
+/other/target/
+/wordcount/target/
+/work/target/
