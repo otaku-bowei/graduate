@@ -18,7 +18,7 @@ public class Member {
         this.customerId = customerId;
         this.genre = genre;
         this.age = age;
-        annualIncome = annualIncome;
+        this.annualIncome = annualIncome;
         this.spendingScore = spendingScore;
         this.name = name;
     }
@@ -40,9 +40,15 @@ public class Member {
     public String toString() {
         return "Member{" +
                 "customerId=" + customerId +
+                ", genre='" + genre + '\'' +
+                ", age=" + age +
+                ", annualIncome=" + annualIncome +
+                ", spendingScore=" + spendingScore +
                 ", name='" + name + '\'' +
                 '}';
     }
+
+
 
     public int getCustomerId() {
         return customerId;

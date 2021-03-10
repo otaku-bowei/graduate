@@ -10,93 +10,6 @@
     <packaging>jar</packaging>
 
     <dependencies>
-
-        <!-- https://mvnrepository.com/artifact/org.scala-lang/scala-library -->
-        <!-- scala环境 -->
-        <dependency>
-            <groupId>org.scala-lang</groupId>
-            <artifactId>scala-library</artifactId>
-            <version>2.11.12</version>
-        </dependency>
-        <!-- https://mvnrepository.com/artifact/org.scala-lang/scala-reflect -->
-        <dependency>
-            <groupId>org.scala-lang</groupId>
-            <artifactId>scala-reflect</artifactId>
-            <version>2.11.12</version>
-        </dependency>
-        <!-- https://mvnrepository.com/artifact/org.scala-lang.modules/scala-parser-combinators -->
-        <dependency>
-            <groupId>org.scala-lang.modules</groupId>
-            <artifactId>scala-parser-combinators_2.11</artifactId>
-            <version>1.1.0</version>
-        </dependency>
-        <!-- https://mvnrepository.com/artifact/org.scala-lang.modules/scala-xml -->
-        <dependency>
-            <groupId>org.scala-lang.modules</groupId>
-            <artifactId>scala-xml_2.11</artifactId>
-            <version>1.0.5</version>
-        </dependency>
-
-
-        <!-- spark环境 -->
-        <!-- https://mvnrepository.com/artifact/org.apache.spark/spark-core -->
-        <dependency>
-            <groupId>org.apache.spark</groupId>
-            <artifactId>spark-core_2.11</artifactId>
-            <version>2.4.7</version>
-            <exclusions>
-                <exclusion>
-                    <groupId>org.apache.hadoop</groupId>
-                    <artifactId>hadoop-client</artifactId>
-                </exclusion>
-                <exclusion>
-                    <groupId>org.scala-lang</groupId>
-                    <artifactId>scala-library</artifactId>
-                </exclusion>
-            </exclusions>
-        </dependency>
-
-        <!-- 添加hadoop环境-->
-        <!-- https://mvnrepository.com/artifact/org.apache.hadoop/hadoop-client -->
-        <dependency>
-            <groupId>org.apache.hadoop</groupId>
-            <artifactId>hadoop-client</artifactId>
-            <version>2.8.3</version>
-        </dependency>
-
-        <!-- https://mvnrepository.com/artifact/org.apache.flink/flink-streaming-java -->
-        <!-- 配置flink -->
-        <dependency>
-            <groupId>org.apache.flink</groupId>
-            <artifactId>flink-streaming-java_2.11</artifactId>
-            <version>1.11.3</version>
-            <scope>provided</scope>
-        </dependency>
-        <!-- https://mvnrepository.com/artifact/org.apache.flink/flink-java -->
-        <dependency>
-            <groupId>org.apache.flink</groupId>
-            <artifactId>flink-java</artifactId>
-            <version>1.11.3</version>
-        </dependency>
-        <!-- https://mvnrepository.com/artifact/org.apache.flink/flink-core -->
-        <dependency>
-            <groupId>org.apache.flink</groupId>
-            <artifactId>flink-core</artifactId>
-            <version>1.11.3</version>
-        </dependency>
-        <!-- https://mvnrepository.com/artifact/org.apache.flink/flink-scala -->
-        <dependency>
-            <groupId>org.apache.flink</groupId>
-            <artifactId>flink-scala_2.11</artifactId>
-            <version>1.11.3</version>
-        </dependency>
-        <dependency>
-            <groupId>io.delta</groupId>
-            <artifactId>delta-core_2.12</artifactId>
-            <version>0.8.0</version>
-        </dependency>
-
-
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
@@ -121,6 +34,19 @@
             <artifactId>log4j-core</artifactId>
             <version>2.11.2</version>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/com.github.shyiko/mysql-binlog-connector-java -->
+        <dependency>
+            <groupId>com.github.shyiko</groupId>
+            <artifactId>mysql-binlog-connector-java</artifactId>
+            <version>0.16.0</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/com.fanxuankai.zeus/canal-core -->
+        <dependency>
+            <groupId>com.fanxuankai.zeus</groupId>
+            <artifactId>canal-core</artifactId>
+            <version>2.0.5</version>
+        </dependency>
+
     </dependencies>
 
     <build>
@@ -148,6 +74,20 @@
                         </goals>
                     </execution>
                 </executions>
+            </plugin>
+
+            <plugin>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <mainClass>com.allen.capturewebdata.Main</mainClass>
+                        </manifest>
+                    </archive>
+                    <descriptorRefs>
+                        <descriptorRef>jar-with-dependencies</descriptorRef>
+                    </descriptorRefs>
+                </configuration>
             </plugin>
         </plugins>
     </build>

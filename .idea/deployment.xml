@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PublishConfigData" autoUpload="Always" serverName="graduate" autoUploadExternalChanges="true">
+    <serverData>
+      <paths name="ecs">
+        <serverdata>
+          <mappings>
+            <mapping local="$PROJECT_DIR$/gold" web="/" />
+            <mapping deploy="/root/graduate" local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="graduate">
+        <serverdata>
+          <mappings>
+            <mapping local="$PROJECT_DIR$/gold" web="/" />
+            <mapping deploy="/graduate" local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+    </serverData>
+    <option name="myAutoUpload" value="ALWAYS" />
+  </component>
+</project>

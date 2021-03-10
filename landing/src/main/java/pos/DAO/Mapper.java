@@ -8,4 +8,5 @@ import java.util.List;
 public interface Mapper {
     @Select("select * from tickets")
     public List<Ticket> getTickets() ;
+
 }

@@ -182,10 +182,22 @@ public class Ticket {
     public String toString() {
         return "Ticket{" +
                 "invoiceID='" + invoiceID + '\'' +
-                ", 顾客=" + customer +
-                ", 日期='" + date + '\'' +
-                ", 付款='" + payment + '\'' +
-                ", 折扣=" + rating +
+                ", branch='" + branch + '\'' +
+                ", city='" + city + '\'' +
+                ", customer=" + customer +
+                ", gender='" + gender + '\'' +
+                ", productLine='" + productLine + '\'' +
+                ", unitPrice=" + unitPrice +
+                ", quantity=" + quantity +
+                ", tax=" + tax +
+                ", total=" + total +
+                ", date='" + date + '\'' +
+                ", time='" + time + '\'' +
+                ", payment='" + payment + '\'' +
+                ", cogs=" + cogs +
+                ", grossMargin=" + grossMargin +
+                ", grossIncome=" + grossIncome +
+                ", rating=" + rating +
                 '}';
     }
 
