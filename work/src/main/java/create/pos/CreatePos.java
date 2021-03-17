@@ -28,16 +28,12 @@ public class CreatePos{
         SparkSession spark = SparkSingleton.getSparkSession() ;
         Dataset<Row> df = spark.createDataFrame(CreatePos.getTickets(),Ticket.class) ;
         df.write().format("delta").save("/delta/pos");
-        spark.close();
-        spark.stop();
     }
 
     public static void createTicketTable(String tableName) throws IOException {
         SparkSession spark = SparkSingleton.getSparkSession() ;
         Dataset<Row> df = spark.createDataFrame(CreatePos.getTickets(),Ticket.class) ;
         df.write().format("delta").saveAsTable(tableName);
-        spark.close();
-        spark.stop();
     }
 
 }

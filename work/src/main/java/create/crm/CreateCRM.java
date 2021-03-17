@@ -28,8 +28,6 @@ public class CreateCRM{
         SparkSession spark = SparkSingleton.getSparkSession() ;
         Dataset<Row> df = spark.createDataFrame(CreateCRM.getMember(),Member.class) ;
         df.write().format("delta").save("/delta/crm");
-        spark.close();
-        spark.stop();
     }
 
 
@@ -37,7 +35,5 @@ public class CreateCRM{
         SparkSession spark = SparkSingleton.getSparkSession() ;
         Dataset<Row> df = spark.createDataFrame(CreateCRM.getMember(),Member.class) ;
         df.write().format("delta").saveAsTable(tableName);
-        spark.close();
-        spark.stop();
     }
 }

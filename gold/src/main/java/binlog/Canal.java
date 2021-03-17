@@ -6,25 +6,21 @@ import com.alibaba.otter.canal.protocol.CanalEntry.Entry;
 import com.alibaba.otter.canal.protocol.CanalEntry.EntryType;
 import com.alibaba.otter.canal.protocol.CanalEntry.RowChange;
 import com.alibaba.otter.canal.protocol.Message;
-import kafka.Consumer;
-import kafka.Consumers;
-import kafka.Producer;
+import sql.Sparksql;
 
 import java.net.InetSocketAddress;
 import java.util.List;
 
 public class Canal implements Runnable{
-    private Producer producer ;
     private String destination ;
 
     public Canal(String destination){
-        this.producer = new Producer() ;
         this.destination = destination ;
     }
 
-    public Canal(Producer producer,String destination){
-        this.producer = producer ;
-        this.destination = destination ;
+    public Canal(){
+
+        this.destination = "example" ;
     }
 
     public void initConnector() {
@@ -52,14 +48,11 @@ public class Canal implements Runnable{
             }
             try {
                 RowChange rowChange = RowChange.parseFrom(entry.getStoreValue());
-                String tableName = entry.getHeader().getTableName() ;
-                Producer producer = (Producer) this.producer.clone();
-                producer.send(tableName,rowChange.getSql());
-                producer.close();
-                if (!Consumers.consumingTables.contains(tableName)){
-                    Consumers.consumingTables.add(tableName) ;
-                    new Thread(new Consumer(tableName)).start();
-                }
+                String str = rowChange.getSql() ;
+                str = str.substring(str.indexOf("*/")+2) ;
+                System.out.println(str);
+                Sparksql.runSQL(str);
+
             } catch (Exception e) {
                 throw new RuntimeException("ERROR ## parser error, data:" + entry.toString(), e);
             }
