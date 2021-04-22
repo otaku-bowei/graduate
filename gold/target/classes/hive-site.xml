@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?> 
+<configuration> 
+	<property> 
+		<name>hive.metastore.local</name> 
+		<value>false</value>
+	</property> 
+	<property> 
+		<name>javax.jdo.option.ConnectionURL</name> 
+		<value>jdbc:mysql://192.168.145.41:3306/hive?useSSL=false</value>
+	</property> 
+	<property> 
+		<name>javax.jdo.option.ConnectionDriverName</name> 
+		<value>com.mysql.jdbc.Driver</value> 
+	</property> 
+	<property> 
+		<name>javax.jdo.option.ConnectionUserName</name> 
+		<value>root</value> 
+	</property> 
+	<property> 
+		<name>javax.jdo.option.ConnectionPassword</name> 
+		<value>root</value> 
+	</property>
+	<property>
+		<name>hive.metastore.uris</name>
+		<value>thrift://192.168.145.41:9083</value>
+	</property>
+	<property>
+		<name>hive.server2.thrift.client.user</name>
+		<value>root</value>
+	</property>
+	<property>
+	        <name>hive.server2.thrift.client.password</name>
+	        <value>root</value>
+	</property>
+	<property>
+    		<name>hive.metastore.warehouse.dir</name>
+    		<value>hdfs://192.168.145.41:9000/user/hive/warehouse</value>
+    		<description>location of default database for the warehouse</description>
+  	</property> 
+	<property>
+    		<name>datanucleus.schema.autoCreateAll</name>
+    		<value>true</value>
+  	</property>
+</configuration>

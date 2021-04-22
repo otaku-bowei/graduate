@@ -1,0 +1,6 @@
+main\getcsv.class
+main\StopSession.class
+main\CreateTables.class
+binlog\Canal.class
+main\Main.class
+main\HDFS.class
